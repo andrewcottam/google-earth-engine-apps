@@ -1,0 +1,45 @@
+.popup {
+	padding: 5px 10px 6px 10px;
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 16px;
+	color: rgba(25, 25, 25, 0.9);
+	display: inline-block;
+	white-space: nowrap;
+	position: absolute;
+	z-index: 5000000000;
+	border: 0.5px solid #aaaaaa;
+	min-width: 100px;
+	/*to cope with full screen mode*/
+}
+
+.kind {
+	font-variant: small-caps;
+}
+
+.attr {
+	font-size: 12px;
+}
+
+
+/*THE FOLLOWING DECLARATIONS ARE HACKS TO SUPPORT HAVING MORE THAN ONE VECTOR TILE LAYER IN A MAP
+Normally in the L.VectorGrid.Protobuf class SVG elements which have the 'pointer-events: auto' set at the element level which blocks any events triggering in the layers beneath (as the SVG elements are 256x256 in size)
+If you set it to none in the SVG but visible in the PATH element then it works*/
+
+svg {
+	pointer-events: none !important;
+}
+
+path {
+	pointer-events: visiblePainted !important;
+}
+
+/*to highlight path features as you hover over them*/
+
+path:hover {
+	stroke-opacity: 1;
+	/*fill-opacity: 0.25;*/
+}
+/*used to stop mouse events in the popup causing issues when the user is moving the cursor*/
+.disableMouseEvents {
+	pointer-events: none !important;
+}

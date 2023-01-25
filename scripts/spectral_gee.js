@@ -27,9 +27,9 @@ require({
 		});
 		loadingOverlay = new LoadingOverlay();
 		queryObject = ioQuery.queryToObject(win.doc.location.search.substring(1));
-		restServerUrl = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com:8081/python-rest-server/h05googleearthengine"; //AWS C9 environment only
+		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/python-rest-server/jrc-database"
 		geeServerUrl = "https://db-server-blishten.c9users.io/cgi-bin/gee.py/";
-		geeImageServerUrl = "https://geeImageServer.appspot.com";
+		geeImageServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/";
 		// ||(document.domain === "127.0.0.1")
 		// need a copy of the current points otherwise changes to the
 		// line update the existing algorithms points
