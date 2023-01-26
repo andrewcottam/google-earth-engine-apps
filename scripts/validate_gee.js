@@ -13,7 +13,7 @@ require(["dojo/dom-class", "esri/SpatialReference", "esri/geometry/Point", "esri
 			zoom : 14,
 			basemap : "satellite"
 		});
-		restServerUrl = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com:8081/python-rest-server/h05googleearthengine"; //ec2-default
+		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/python-rest-server/jrc-database"; //ec2-default
 		geeServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/";
 		getValidationClasses();
 		topic.subscribe("urlsPopulated", urlsPopulated);
