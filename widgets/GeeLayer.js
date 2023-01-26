@@ -115,7 +115,7 @@ define(["dojo/request", "dojo/io-query", "dojo/Stateful", "dojo/dom-style", "doj
 				}
 			}
 			this.previousParamsQuery = paramsQuery;
-			request.post(this.geeServerUrl + "/ogc", {
+			request.get(this.geeServerUrl + "/ogc", {
 				data : params,
 				headers : {
 					"X-Requested-With" : ""

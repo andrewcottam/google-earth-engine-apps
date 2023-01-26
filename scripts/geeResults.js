@@ -4,8 +4,8 @@ require({
         { name: "widgetsPackage", location: "/../widgets" }
     ]
 	}, ["dojo/text!./templates/infoWindow.html", "esri/InfoTemplate", "esri/domUtils", "widgetsPackage/wmsFilterLayer", "dijit/registry", "dojo/parser", "dojo/_base/lang", "dijit/form/HorizontalSlider", "esri/dijit/BasemapToggle", "esri/graphicsUtils", "dojo/dom-style", "dojo/dom-construct", "dojox/charting/themes/ThreeD", "dojox/charting/Chart", "dojo/io-query", "dgrid/Grid", "dojo/request/script", "dojo/Deferred", "dojo/dom", "dojo/dom-construct", "dojo/dom-attr", "dojo/keys", "dojox/gfx", "esri/geometry/Point", "esri/symbols/SimpleLineSymbol", "dojo/_base/Color", "esri/symbols/SimpleMarkerSymbol", "esri/graphic", "esri/layers/GraphicsLayer", "dojo/_base/array", "esri/geometry/screenUtils", "esri/geometry/Polygon", "dojo/request/xhr", "esri/geometry/webMercatorUtils", "dojo/on", "esri/SpatialReference", "esri/geometry/Extent", "esri/layers/WMSLayerInfo", "esri/layers/WMSLayer", "esri/map", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojo/domReady!", "dojox/charting/plot2d/Lines", "dojox/charting/axis2d/Default"], function(infoWindow, InfoTemplate, domUtils, wmsFilterLayer, registry, parser, lang, HorizontalSlider, BasemapToggle, graphicsUtils, domStyle, domConstruct, blue, Chart, ioQuery, Grid, script, Deferred, dom, domConstruct, domAttr, keys, gfx, Point, SimpleLineSymbol, Color, SimpleMarkerSymbol, Graphic, GraphicsLayer, array, screenUtils, Polygon, xhr, webMercatorUtils, on, SpatialReference, Extent, WMSLayerInfo, WMSLayer, Map, BorderContainer, ContentPane) {
-	var WMS_ENDPOINT = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com/geoserver/gee_workspace/wms?";
-	var WFS_ENDPOINT = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com/geoserver/gee_workspace/ows?";
+	var GEOSERVER_WMS_ENDPOINT = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com/geoserver/gee_workspace/wms?";
+	var GEOSERVER_WFS_ENDPOINT = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com/geoserver/gee_workspace/ows?";
 	var LAYER_NAME = "gee_workspace:gee_validation_results";
 	var IDENTIFY_RADIUS = 3;
 	var LASSO_SURFACE_ID = "lassoSurface";
@@ -78,7 +78,7 @@ require({
 	}
 
 	function initialiseMap() {
-		wmsLayer = new wmsFilterLayer(WMS_ENDPOINT, LAYER_NAME);
+		wmsLayer = new wmsFilterLayer(GEOSERVER_WMS_ENDPOINT, LAYER_NAME);
 		wmsLayer.cql_filter = "applied_masks=1 and predicted_class=3";
 		wmsLayer.crs = "EPSG:900913";
 		selectedFeaturesLayer = new GraphicsLayer();
@@ -353,7 +353,7 @@ require({
 			outputFormat : "json"
 		};
 		//run a synchronous query to get the features from WFS
-		xhr(WFS_ENDPOINT, {
+		xhr(GEOSERVER_WFS_ENDPOINT, {
 			query : wfsquery,
 			handleAs : "json",
 			sync : true,
