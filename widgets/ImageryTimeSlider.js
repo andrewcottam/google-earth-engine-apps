@@ -3,7 +3,7 @@
 //  showAllYears - set to true to show tics and labels for all years even those without imagery 
 //  hideToEdge - to hide the widget to the edge of the leaflet map
 
-define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "dojo/dom-attr", "dijit/_WidgetsInTemplateMixin", "dijit/Dialog", "dijit/focus", "dojo/_base/window", "dojo/keys", "dojo/html", "dojo/date", "dojo/date/locale", "dojo/dom", "dojo/dom-style", "dojo/dom-geometry", "dojo/dom-class", "dojo/_base/array", "dojo/dom-construct", "dojo/request/script", "dojo/_base/lang", "dojo/on", "dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin", "dojo/text!./templates/ImageryTimeSlider.html", "dijit/form/Select", "dijit/form/NumberSpinner", "dijit/form/CheckBox", "../widgets/scripts/NonTiledLayer.js", "../widgets/scripts/NonTiledLayer.WMS.js", "../widgets/scripts/Control.Loading.js", "../widgets/scripts/L.Control.MousePosition.js", "../widgets/scripts/geeImageLayer.js"],
+define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "dojo/dom-attr", "dijit/_WidgetsInTemplateMixin", "dijit/Dialog", "dijit/focus", "dojo/_base/window", "dojo/keys", "dojo/html", "dojo/date", "dojo/date/locale", "dojo/dom", "dojo/dom-style", "dojo/dom-geometry", "dojo/dom-class", "dojo/_base/array", "dojo/dom-construct", "dojo/request/script", "dojo/_base/lang", "dojo/on", "dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin", "dojo/text!./templates/ImageryTimeSlider.html", "dijit/form/Select", "dijit/form/NumberSpinner", "dijit/form/CheckBox", "./scripts/NonTiledLayer.js", "./scripts/NonTiledLayer.WMS.js", "./scripts/Control.Loading.js", "./scripts/L.Control.MousePosition.js", "./scripts/geeImageLayer.js"],
 	function(query, xhr, Evented, registry, domAttr, _WidgetsInTemplateMixin, Dialog, focusUtil, win, keys, html, date, locale, dom, domStyle, domGeom, domClass, array, domConstruct, script, lang, on, declare, _WidgetBase, _TemplatedMixin, template) {
 		return declare("ImageryTimeSlider", [_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Evented], {
 			templateString: template,
@@ -381,7 +381,7 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 				var value = (domStyle.get("ImageryTimeSliderControls", "display") == "block") ? "none" : "block";
 				domStyle.set(dom.byId("ImageryTimeSliderControls"), "display", value);
 				var image = (domStyle.get("ImageryTimeSliderControls", "display") == "block") ? "up.png" : "down.png";
-				domAttr.set("configImg", "src", "../widgets/images/" + image);
+				domAttr.set("configImg", "src", "./images/" + image);
 				this.positionSlider(false, 20, false);
 			},
 			bandsChanged: function(value) {
@@ -453,7 +453,7 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 			openInfo: function() {
 				var infoDialog = new Dialog({
 					title: "Information",
-					href: "../widgets/resources/imageControllerInfo.html",
+					href: "./resources/imageControllerInfo.html",
 					style: "width: 800px"
 				});
 				infoDialog.show();
