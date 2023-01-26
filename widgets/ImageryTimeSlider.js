@@ -380,8 +380,8 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 			showSettings: function(evt) {
 				var value = (domStyle.get("ImageryTimeSliderControls", "display") == "block") ? "none" : "block";
 				domStyle.set(dom.byId("ImageryTimeSliderControls"), "display", value);
-				var image = (domStyle.get("ImageryTimeSliderControls", "display") == "block") ? "./widgets/images/up.png" : "./widgets/images/down.png";
-				domAttr.set("configImg", "src", "./images/" + image);
+				var image = (domStyle.get("ImageryTimeSliderControls", "display") == "block") ? "up.png" : "down.png";
+				domAttr.set("configImg", "src", "./widgets/images/" + image);
 				this.positionSlider(false, 20, false);
 			},
 			bandsChanged: function(value) {
