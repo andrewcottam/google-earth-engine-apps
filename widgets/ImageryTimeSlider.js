@@ -8,7 +8,7 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 		return declare("ImageryTimeSlider", [_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Evented], {
 			templateString: template,
 			baseClass: "imageryTimeSlider",
-			geeServerUrl: "https://geeImageServer.appspot.com",
+			geeServerUrl: "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/",
 			sentinelHubUrlWFS: "https://services.sentinel-hub.com/v1/wfs/363b9a1a-de1b-4009-b1d2-ba935bea739e?",
 			sentinelHubUrlWMS: "https://services.sentinel-hub.com/v1/wms/363b9a1a-de1b-4009-b1d2-ba935bea739e?showLogo=false",
 			// sentinelHubUrlWMS: "https://services-uswest2.sentinel-hub.com/v1/wms/363b9a1a-de1b-4009-b1d2-ba935bea739e?", //landsat 8 - fails to get through the proxy

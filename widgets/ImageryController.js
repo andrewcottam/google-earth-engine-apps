@@ -4,7 +4,7 @@ define(["dojo/dom-class", "dojox/widget/Standby", "dijit/registry", "dijit/focus
         return declare("ImageryController", [_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         	templateString: template,
         	NO_DATE_SELECTED_STRING: "No date selected", 
-    		geeServerUrl: "https://geeImageServer.appspot.com",
+    		geeServerUrl: "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/",
     		dateMode: "years",
     		currentDate: this.NO_DATE_SELECTED_STRING,
     		cloudMax: 10,

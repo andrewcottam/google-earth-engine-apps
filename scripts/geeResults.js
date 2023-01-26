@@ -31,7 +31,7 @@ require({
 			refreshWMSLayer();
 		});
 		restServerUrl = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com:8081/python-rest-server/h05googleearthengine"; //AWS C9 environment only
-		geeServerUrl = "https://geeimageserver.appspot.com/ogc?";
+		geeServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/ogc?";
 		map = new Map("mapDiv", {
 			zoom : 3,
 			center : [0, 25],

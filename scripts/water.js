@@ -10,7 +10,7 @@ require({
 	function(ImageryTimeSlider, win, ioQuery, StackedColumns, Default, domStyle, Chart, lang, script, stamp, registry, ready, parser, array, on) {
 		ready(function() {
 			var map, imageryTimeSlider, mbLayer, transitionsLayer, p32occurrence, p1p2change, annualRecurrence, maxWaterExtent, seasonality, monthlyRecurrenceChart, yearlyClassificationsChart, queryObject, digitalGlobeLayer;
-			var geeServerUrl = "https://geeImageServer.appspot.com";
+			var geeServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/";
 			var digitialGlobeApiKey = "pk.eyJ1IjoiZGlnaXRhbGdsb2JlIiwiYSI6ImNpbmJscnhhZTBudmp0cWx3MXI5bWt0djgifQ.9DibR63tG-LY6FvjDLhCXg";
 			//custom extent can be specified as follows: index.html?lat=15.4818&lng=-3.7372&zoom=12
 			queryObject = ioQuery.queryToObject(win.doc.location.search.substring(1));
