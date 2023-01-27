@@ -149,11 +149,12 @@ require(["dojo/dom-class", "esri/SpatialReference", "esri/geometry/Point", "esri
 						wkid : 3857
 					}));
 					map.centerAt(centerPoint);
-					imagerymap.centerAndZoom(centerPoint, 14);
-					console.log("Center point x=" + centerPoint.x + " y=" + centerPoint.y);
-					console.log("Extent of ArcGIS imagery: xmin=" + imagerymap.extent.xmin + " xmax=" + imagerymap.extent.xmax + " ymin=" + imagerymap.extent.ymin + " ymax=" + imagerymap.extent.ymax + " width=" + (imagerymap.extent.xmax - imagerymap.extent.xmin) + " height=" + (imagerymap.extent.ymax - imagerymap.extent.ymin) + " mapCenterX:" + imagerymap.extent.getCenter().x + "  mapCenterY:" + imagerymap.extent.getCenter().y);
-					console.log("Site centroid x=" + site.x + " y=" + site.y);
-					console.log("Bounding box for GEE img: xmin:" + (site.x - bboxSize) + " xmax=" + (site.x + bboxSize) + " ymin=" + (site.y - bboxSize) + " ymax=" + (site.y + bboxSize) + " width:" + (2 * bboxSize) + " height:" + (2 * bboxSize));
+					imagerymap.centerAndZoom(centerPoint, 14).then(function(response) {;
+						console.log("Center point x=" + centerPoint.x + " y=" + centerPoint.y);
+						console.log("Extent of ArcGIS imagery: xmin=" + imagerymap.extent.xmin + " xmax=" + imagerymap.extent.xmax + " ymin=" + imagerymap.extent.ymin + " ymax=" + imagerymap.extent.ymax + " width=" + (imagerymap.extent.xmax - imagerymap.extent.xmin) + " height=" + (imagerymap.extent.ymax - imagerymap.extent.ymin) + " mapCenterX:" + imagerymap.extent.getCenter().x + "  mapCenterY:" + imagerymap.extent.getCenter().y);
+						console.log("Site centroid x=" + site.x + " y=" + site.y);
+						console.log("Bounding box for GEE img: xmin:" + (site.x - bboxSize) + " xmax=" + (site.x + bboxSize) + " ymin=" + (site.y - bboxSize) + " ymax=" + (site.y + bboxSize) + " width:" + (2 * bboxSize) + " height:" + (2 * bboxSize));
+					}
 				}
 				setLandCoverClass(site);
 				display = (site.hasOwnProperty("validated_class")) ? "block" : "none";
