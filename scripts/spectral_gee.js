@@ -1008,7 +1008,7 @@ require({
 			});
 			on(spectralLayer, "update-end", function(event) {
 				if (event.error) {
-					if event.error.message.startsWith('Unable to load image'){
+					if (event.error.message.startsWith('Unable to load image')){
 						alert("GeoServer is not running. The spectral graph will be unavailable");
 					}else{
 						alert("GeoServer Error: " + event.error.message);
