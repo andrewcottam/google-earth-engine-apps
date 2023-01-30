@@ -166,7 +166,7 @@ require({
 			sliderStyle : "large",
 			spatialReference: new SpatialReference({
 				wkid : 102100
-			}
+			})
 		});
 		if (queryObject.x !== undefined) {
 			map.centerAndZoom(new Point(queryObject.x, queryObject.y, new SpatialReference({
