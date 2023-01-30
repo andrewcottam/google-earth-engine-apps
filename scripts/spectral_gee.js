@@ -34,7 +34,7 @@ require({
 		// need a copy of the current points otherwise changes to the
 		// line update the existing algorithms points
 		parser.parse().then(function() {
-			console.log('parser.parsed');
+			console.warn('parser.parsed');
 			logout();
 			algorithmNameDialog = new EnterTextDialog();
 			algorithmNameDialog.startup();
@@ -177,7 +177,7 @@ require({
 		}, "geolocator");
 		geocoder.startup();
 		map.on("load", function() {
-			console.log('map load');
+			console.warn('map load');
 			on(map, "extent-change", extentChange);
 			on(map, "click", mapClick);
 			on(map, "key-up", deleteSite);
@@ -954,7 +954,7 @@ require({
 		}
 
 		function createSpectralMap() {
-			console.log("createSpectralMap");
+			console.warn("createSpectralMap");
 			spectralMap = new Map("spectralChart", {
 				extent : initialSpectralMapExtent,
 				logo : false
