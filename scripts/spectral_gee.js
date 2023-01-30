@@ -166,9 +166,9 @@ require({
 			sliderStyle : "large"
 		});
 		if (queryObject.x !== undefined) {
-			map.centerAndZoom(new Point(queryObject.x, queryObject.y, new SpatialReference({
-				wkid : 102100
-			})), queryObject.level);
+			// map.centerAndZoom(new Point(queryObject.x, queryObject.y, new SpatialReference({
+			// 	wkid : 102100
+			// })), queryObject.level);
 		}
 		geocoder = new Geocoder({
 			map : map,
