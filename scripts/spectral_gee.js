@@ -1008,7 +1008,11 @@ require({
 			});
 			on(spectralLayer, "update-end", function(event) {
 				if (event.error) {
-					alert("GeoServer Error: " + event.error.message);
+					if event.error.message.startsWith('Unable to load image'){
+						alert("GeoServer is not running. The spectral graph will be unavailable");
+					}else{
+						alert("GeoServer Error: " + event.error.message);
+					}
 				} else {
 					domStyle.set("chartLoadingImg", 'display', 'none');
 				};
@@ -1279,24 +1283,28 @@ require({
 				console.log("<< rest_getDetectionAlgorithms");
 				clearAlgorithmsInList();
 				algorithms = [];
-				if (response.records.length > 0) {
-					array.forEach(response.records, function(item) {
-						var algorithm = json.parse(item.algorithm);
-						algorithm.oid = item.algorithm_oid;
-						algorithms.push(algorithm);
-						topic.publish("algorithmCountChanged", {
-							action : 'loadedFromREST',
-							algorithm : algorithm
+				if (response.records){
+					if (response.records.length > 0) {
+						array.forEach(response.records, function(item) {
+							var algorithm = json.parse(item.algorithm);
+							algorithm.oid = item.algorithm_oid;
+							algorithms.push(algorithm);
+							topic.publish("algorithmCountChanged", {
+								action : 'loadedFromREST',
+								algorithm : algorithm
+							});
 						});
-					});
-				} else {
-					// no algorithms are available for the current user
-					// - so copy the default one to the users account
-					topic.publish("algorithmCountChanged", {
-						action : 'added',
-						algorithm : currentAlgorithm
-					});
-				}
+					} else {
+						// no algorithms are available for the current user
+						// - so copy the default one to the users account
+						topic.publish("algorithmCountChanged", {
+							action : 'added',
+							algorithm : currentAlgorithm
+						});
+					}
+					}else{
+						alert('The database is not available. Please contact support.')
+					}
 			});
 		}
 
@@ -1984,6 +1992,9 @@ require({
 			} else {
 				siteLayer.add(graphic);
 			}
+			// Add an event to the Zoom to Button on the info window which will call zoomToSite - NOT FINISHED
+			// var nl = query(".action zoomto");
+			// query("input[name='basemapLayer']").on("click", updateBasemap);			
 		}
 
 		function removeGraphic(oid) {
