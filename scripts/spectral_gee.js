@@ -165,9 +165,11 @@ require({
 			basemap : "topo",
 			sliderStyle : "large"
 		});
-		map.spatialReference = new SpatialReference({
-			wkid : 102100
-		});
+		//the following is to try to avoid the error when loading when the map has not finished loading but the dom is being resized 
+		// the spatial reference is not set so i added this. however, there is no error now but it fails to finish loading
+		// map.spatialReference = new SpatialReference({
+		// 	wkid : 102100
+		// });
 		if (queryObject.x !== undefined) {
 			map.centerAndZoom(new Point(queryObject.x, queryObject.y, new SpatialReference({
 				wkid : 102100
