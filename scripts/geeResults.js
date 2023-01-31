@@ -30,7 +30,7 @@ require({
 			cqlFilter.predicted_class = value;
 			refreshWMSLayer();
 		});
-		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/python-rest-server/joint-research-centre"; //AWS C9 environment only
+		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/joint-research-centre"; //AWS C9 environment only
 		geeServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/ogc?";
 		map = new Map("mapDiv", {
 			zoom : 3,

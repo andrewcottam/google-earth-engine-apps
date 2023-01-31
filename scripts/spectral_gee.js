@@ -27,7 +27,7 @@ require({
 		});
 		loadingOverlay = new LoadingOverlay();
 		queryObject = ioQuery.queryToObject(win.doc.location.search.substring(1));
-		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/python-rest-server/joint-research-centre"
+		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/joint-research-centre"
 		geeServerUrl = "https://db-server-blishten.c9users.io/cgi-bin/gee.py/";
 		geeImageServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/";
 		// ||(document.domain === "127.0.0.1")

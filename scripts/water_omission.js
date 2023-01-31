@@ -18,7 +18,7 @@ require(["dojo/dom-class", "esri/SpatialReference", "esri/geometry/Point", "esri
 			zoom : 14,
 			basemap : "satellite"
 		});
-		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/python-rest-server/joint-research-centre"; //AWS C9 environment only
+		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/joint-research-centre"; //AWS C9 environment only
 		geeServerUrl = "http://geeImageServer.appspot.com";
 		getValidationClasses();
 		topic.subscribe("urlsPopulated", urlsPopulated);
