@@ -27,12 +27,9 @@ require({
 		});
 		loadingOverlay = new LoadingOverlay();
 		queryObject = ioQuery.queryToObject(win.doc.location.search.substring(1));
-		// LAYER_NAME = "gee_workspace:_gee_spectral_data";
-		LAYER_NAME = "test:test";
-		// GEOSERVER_WMS_ENDPOINT = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com/geoserver/gee_workspace/wms?";
-		// GEOSERVER_WFS_ENDPOINT = "https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com/geoserver/gee_workspace/ows?";
-		GEOSERVER_WMS_ENDPOINT = "https://geoserver-ny43uciwwa-oc.a.run.app/geoserver/test/wms?";
-		GEOSERVER_WFS_ENDPOINT = "https://geoserver-ny43uciwwa-oc.a.run.app/geoserver/test/ows?";
+		LAYER_NAME = "cloud_sql:gee_spectral_data";
+		GEOSERVER_WMS_ENDPOINT = "https://geoserver-ny43uciwwa-oc.a.run.app/geoserver/cloud_sql/wms?";
+		GEOSERVER_WFS_ENDPOINT = "https://geoserver-ny43uciwwa-oc.a.run.app/geoserver/cloud_sql/ows?";
 		restServerUrl = "https://python-rest-server-ny43uciwwa-oc.a.run.app/joint-research-centre"
 		geeServerUrl = "https://db-server-blishten.c9users.io/cgi-bin/gee.py/";
 		geeImageServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/";
