@@ -372,13 +372,13 @@ require({
 					array.forEach(response.records, function(record, index) {
 						recurrenceData.push({
 							x: index + 1,
-							y: record.monthly_recurrence,
+							y: record.monthly_recurrence/100,
 							fill: "#006AC2",
 							stroke: "#ffffff"
 						});
 						obsData.push({
 							x: index + 1,
-							y: 1 - record.monthly_recurrence,
+							y: (100 - record.monthly_recurrence)/100,
 							fill: "#FFD5A7",
 							stroke: "#ffffff"
 						});
