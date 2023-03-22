@@ -480,11 +480,11 @@ label {
 	background-position: -933px;
 }
 
-.loading {
-	/* display: none; */
+#loading {
+	display: none;
 	position: absolute;
 	left: 348px;
-	top: 388px;
+	top: 374px;
 	max-width: 200px;
 	text-align: center;
 }
