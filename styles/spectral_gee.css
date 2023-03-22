@@ -32,20 +32,16 @@ body {
 	background: #fff url('//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
 }
 
-.loadingMessage {
-	padding: 25px 40px;
-	color: #999;
-}
 
 #sceneSelect {
 	width: 230px;
 }
 
-#loading {
+/* #loading {
 	display: none;
 	vertical-align: middle;
 	padding-top: 30px;
-}
+} */
 
 #chartLoadingImg {
 	position: absolute;
@@ -238,6 +234,10 @@ label {
 	z-index: 2;
 }
 
+#geolocator_input {
+	width: 90px;
+}
+
 .simpleGeocoder .esriGeocoder {
 	border: 1px solid #b5bcc7;
 	border-radius: 0px;
@@ -245,7 +245,7 @@ label {
 }
 
 .simpleGeocoder .esriGeocoderContainer {
-	width: 300px;
+	width: 145px;
 }
 
 .simpleGeocoder .esriGeocoder .esriGeocoderSearch {
@@ -478,4 +478,20 @@ label {
 
 .jrcChartIconsRunDisabled {
 	background-position: -933px;
+}
+
+.loading {
+	/* display: none; */
+	position: absolute;
+	left: 348px;
+	top: 388px;
+	max-width: 200px;
+	text-align: center;
+}
+#loadingMessage {
+	color: gray;
+	font-size: 18px;
+	width:200px;
+	text-align: center;
+	margin-top: 7px;
 }
