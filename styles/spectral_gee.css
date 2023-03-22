@@ -29,9 +29,11 @@ body {
 }
 
 #loadingOverlay {
-	background: #fff url('//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
+	background: #fff url(//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/images/loadingAnimation.gif) no-repeat 10px 23px;
+	width: 100%;
+	text-align: center;
+	background-position: left 700px top 400px;
 }
-
 
 #sceneSelect {
 	width: 230px;
@@ -482,16 +484,20 @@ label {
 
 #loading {
 	display: none;
+	background-color: white;
+	padding: 16px 10px 10px 10px;
 	position: absolute;
 	left: 348px;
 	top: 374px;
-	max-width: 200px;
 	text-align: center;
+	opacity: 0.8;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
 }
+
 #loadingMessage {
 	color: gray;
 	font-size: 18px;
-	width:200px;
+	width: 200px;
 	text-align: center;
 	margin-top: 7px;
 }
