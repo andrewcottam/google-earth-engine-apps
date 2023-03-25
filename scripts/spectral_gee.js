@@ -1497,7 +1497,7 @@ require({
 		function saveAlgorithmToFile() {
 			console.log("saveAlgorithmToFile");
 			var filename = "algorithm_oid_" + currentAlgorithm.oid;
-			request.post(geeImageServerUrl + "/createDownloadFile", {
+			request.post(geeImageServerUrl + "createDownloadFile", {
 				data : {
 					"filename" : filename,
 					"algorithm" : json.stringify(currentAlgorithm)
@@ -1506,7 +1506,6 @@ require({
 					"X-Requested-With" : ""
 				}
 			}).then(function(url) {
-				var url = "http://storage.googleapis.com" + url;
 				window.location = url;
 
 			});
