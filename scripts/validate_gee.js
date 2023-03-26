@@ -276,7 +276,7 @@ require(["dojo/dom-class", "esri/SpatialReference", "esri/geometry/Point", "esri
 		}
 
 		function openDirect() {
-			window.open("https://andrewcottam.github.io/web_apps/gee_tools/spectral.html?x=" + sites[position].x + "&y=" + sites[position].y + "&level=14&sceneid=" + sites[position].sceneid + "&bands=6,4,3", "_test");
+			window.open("https://andrewcottam.github.io/google-earth-engine-apps/spectral.html?x=" + sites[position].x + "&y=" + sites[position].y + "&level=14&sceneid=" + sites[position].sceneid + "&bands=6,4,3", "_test");
 		}
 
 	});
