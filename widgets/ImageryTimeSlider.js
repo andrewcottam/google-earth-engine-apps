@@ -38,6 +38,10 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 				}
 			},
 			postCreate: function() {
+				//Prevent click events on this widget bubbling to the map
+				L.DomEvent.on(this.domNode, 'click', function (ev) {
+					L.DomEvent.stopPropagation(ev);
+				});
 				domClass.add(win.body(), "claro"); //give the widget the claro class in case its not in the body
 				on(dom.byId("sliderBar"), "click", lang.hitch(this, this.barClicked)); //add handling of clicking on the slider bar
 				on(win.body(), "keydown", lang.hitch(this, this.keyDown)); //add handling of LEFT and RIGHT arrow presses and 
@@ -104,7 +108,7 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 			},
 			requestDates: function() {
 				this.disableSlider();
-				html.set(dom.byId("yearMonth"), "Loading dates..");
+				// html.set(dom.byId("yearMonth"), "Loading dates..");
 				switch (this.provider) {
 					case "sentinelHub":
 						this.requestDates_sentinelHub();
@@ -212,7 +216,10 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 				domConstruct.empty("sliderTics");
 				//get all the year/months as yyyy-mm
 				var yearMonths = this.getAllYearMonths();
+				// console.log(yearMonths)
 				array.forEach(yearMonths, lang.hitch(this, function(item) {
+					var year = item.slice(0, 4);
+					var currentYear = new Date().getFullYear();
 					if ((array.indexOf(this.yearMonths, item) >= 0)) { //tds showing where there is imagery
 						domConstruct.place("<td id='" + item + "' title='" + this.formatYearMonth(item) + "' class='data'>", "sliderBar"); //imagery present
 					}
@@ -220,12 +227,11 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 						domConstruct.place("<td class='nodata'>", "sliderBar"); //no imagery
 					}
 					if (item.slice(-2) == "01") { //year tics and labels
-						var year = item.slice(0, 4);
 						var hasData = array.some(this.yearMonths, function(item) {
 							return item.slice(0, 4) == year;
 						});
-						var currentYear = new Date().getFullYear();
-						if (hasData || this.showAllYears || Number(year) == 1984 || Number(year) == currentYear) { //show tics/labels if there is imagery, if showAllYears is true, or it is the first/last year
+						// if (hasData || this.showAllYears || Number(year) == 1984 || Number(year) == currentYear) { //show tics/labels if there is imagery, if showAllYears is true, or it is the first/last year
+						if (Number(year)%5 === 0) { //show tics/labels if there is imagery, if showAllYears is true, or it is the first/last year
 							domConstruct.place("<td class='sliderTic'></td>", "sliderTics");
 							domConstruct.place("<td><div class='sliderLabel'>" + year + "</div></td>", "sliderLabels");
 						}
@@ -234,7 +240,12 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 							domConstruct.place("<td></td>", "sliderLabels");
 						}
 					}
-				}));
+					if (Number(year) === currentYear) {
+						// we need to add a margin on to the right of the slider bar until the end of the year to match the tic and label bar
+						var month_difference = 12 - Number(item.slice(-2));
+						domStyle.set(dom.byId("sliderBarTable"), "margin-right", month_difference + 'px');
+					}
+			}));
 			},
 			getAllYearMonths: function() {
 				var years = [];
@@ -261,7 +272,7 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 			},
 			requestImagery: function(yearMonth) {
 				var wmsParams;
-				html.set(dom.byId("yearMonth"), "Loading image..");
+				// html.set(dom.byId("yearMonth"), "Loading image..");
 				this.disableSlider();
 				var yearPart = Number(yearMonth.substring(0, 4));
 				var monthPart = Number(yearMonth.slice(-2));

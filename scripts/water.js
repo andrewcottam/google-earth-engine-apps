@@ -12,9 +12,9 @@ require({
 			//custom extent can be specified as follows: index.html?lat=15.4818&lng=-3.7372&zoom=12
 			queryObject = ioQuery.queryToObject(win.doc.location.search.substring(1));
 			parser.parse().then(function() {
-				on(registry.byId("toggleMBbasemap"), "change", function(value) {
-					(value) ? map.addLayer(mbLayer): map.removeLayer(mbLayer);
-				});
+				// on(registry.byId("toggleMBbasemap"), "change", function(value) {
+				// 	(value) ? map.addLayer(mbLayer): map.removeLayer(mbLayer);
+				// });
 				on(registry.byId("toggleDGbasemap"), "change", function(value) {
 					(value) ? imageryTimeSlider.show(): imageryTimeSlider.hide();
 				});
