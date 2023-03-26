@@ -1,6 +1,7 @@
 # google-earth-engine-apps
 Apps for working with Google Earth Engine
 
-# Start page
+# Deployment
+When a commit is pushed to GitHub the pages are built automatically and available at: 
 
 https://andrewcottam.github.io/google-earth-engine-apps/
