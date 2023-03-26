@@ -392,7 +392,7 @@ require({
 				}) + " " + scene.properties.SCENE_CENTER_TIME;
 				if (scene.properties.CLOUD_COVER === undefined) {
 					cloud = 0;
-					cloud = scene.properties.CLOUDY_PIXEL_PERCENTAGE; //for sentinel2
+					cloud = scene.properties.CLOUDY_PIXEL_PERCENTAGE.toFixed(0); //for sentinel2
 				} else {
 					cloud = Number(scene.properties.CLOUD_COVER.toFixed(0));
 				};
