@@ -515,7 +515,7 @@ require({
 				defaultMinMax = [0, 100];
 				break;
 			case "LANDSAT/LT5_L1T_TOA":
-			case "LANDSAT/L7_L1T_TOA":
+			case "LANDSAT/LE7_L1T_TOA":
 			case "LANDSAT/LC8_L1T_TOA":
 				defaultMinMax = [0, 0.4];
 				break;
