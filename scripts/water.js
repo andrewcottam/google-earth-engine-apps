@@ -54,8 +54,9 @@ require({
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
 			});
-			p32occurrence = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/occurrence/{z}/{x}/{y}.png", {
-				format: "image/png",
+			// p32occurrence = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/occurrence/{z}/{x}/{y}.png", {
+			p32occurrence = new L.tileLayer("https://storage.googleapis.com/global-surface-water/maptiles/occurrence/{z}/{x}/{y}.png", { // with the easter egg at https://andrewcottam.github.io/google-earth-engine-apps/water.html?lat=0&lng=0&zoom=12
+					format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
