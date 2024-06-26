@@ -48,37 +48,37 @@ require({
 				maxZoom: 19,
 				attribution: '(c) <a href="https://microsites.digitalglobe.com/interactive/basemap_vivid/">DigitalGlobe</a> , (c) OpenStreetMap, (c) Mapbox'
 			});
-			transitionsLayer = new L.tileLayer("https://storage.googleapis.com/global-surface-water/maptiles/transitions/{z}/{x}/{y}.png", {
+			transitionsLayer = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/transitions/{z}/{x}/{y}.png", {
 				format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
 			});
-			p32occurrence = new L.tileLayer("https://storage.googleapis.com/global-surface-water/maptiles/occurrence/{z}/{x}/{y}.png", {
+			p32occurrence = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/occurrence/{z}/{x}/{y}.png", {
 				format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
 			});
-			p1p2change = new L.tileLayer("https://storage.googleapis.com/global-surface-water/maptiles/change/{z}/{x}/{y}.png", {
+			p1p2change = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/change/{z}/{x}/{y}.png", {
 				format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
 			});
-			annualRecurrence = new L.tileLayer("https://storage.googleapis.com/global-surface-water/maptiles/recurrence/{z}/{x}/{y}.png", {
+			annualRecurrence = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/recurrence/{z}/{x}/{y}.png", {
 				format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
 			});
-			maxWaterExtent = new L.tileLayer("https://storage.googleapis.com/global-surface-water/maptiles/extent/{z}/{x}/{y}.png", {
+			maxWaterExtent = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/extent/{z}/{x}/{y}.png", {
 				format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
 			});
-			seasonality = new L.tileLayer("https://storage.googleapis.com/global-surface-water/maptiles/seasonality/{z}/{x}/{y}.png", {
+			seasonality = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/seasonality/{z}/{x}/{y}.png", {
 				format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
@@ -325,6 +325,24 @@ require({
 					}, {
 						value: 32,
 						text: "2015"
+					}, {
+						value: 33,
+						text: "2016"
+					}, {
+						value: 34,
+						text: "2017"
+					}, {
+						value: 35,
+						text: "2018"
+					}, {
+						value: 36,
+						text: "2019"
+					}, {
+						value: 37,
+						text: "2020"
+					}, {
+						value: 38,
+						text: "2021"
 					}]
 				});
 				yearlyClassificationsChart.addAxis("y", {
