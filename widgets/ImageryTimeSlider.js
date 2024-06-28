@@ -417,7 +417,7 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 				}
 			},
 			copernicusChanged: function(value) {
-				this.layers = (value) ? "COPERNICUS/S2" : "all";
+				this.layers = (value) ? "COPERNICUS/S2_SR_HARMONIZED" : "all";
 				this.requestDates();
 			},
 			slcChanged: function(value) {
