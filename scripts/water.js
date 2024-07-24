@@ -73,7 +73,7 @@ require({
 				errorTileUrl: "images/transparent.png",
 				attribution: "2016 EC JRC/Google"
 			});
-			maxWaterExtent = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/extent/{z}/{x}/{y}.png", {
+			maxWaterExtent = new L.tileLayer("https://storage.googleapis.com/global-surface-water/tiles2021/maximum_extent/{z}/{x}/{y}.png", {
 				format: "image/png",
 				maxNativeZoom: 13,
 				errorTileUrl: "images/transparent.png",
