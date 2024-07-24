@@ -381,9 +381,11 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 						}
 						break;
 					case (keys.NUMPAD_PLUS):
+					case (keys.UP_ARROW):
 						this.stretchImage(true);
 						break;
 					case (keys.NUMPAD_MINUS):
+					case (keys.DOWN_ARROW):
 						this.stretchImage(false);
 						break;
 				}
@@ -415,7 +417,7 @@ define(["dojo/query", "dojo/request/xhr", "dojo/Evented", "dijit/registry", "doj
 				}
 			},
 			copernicusChanged: function(value) {
-				this.layers = (value) ? "COPERNICUS/S2" : "all";
+				this.layers = (value) ? "COPERNICUS/S2_SR_HARMONIZED" : "all";
 				this.requestDates();
 			},
 			slcChanged: function(value) {
