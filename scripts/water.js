@@ -10,6 +10,8 @@ require({
 			var geeServerUrl = "https://google-earth-engine-server-ny43uciwwa-oc.a.run.app/";
 			var digitialGlobeApiKey = "pk.eyJ1IjoiZGlnaXRhbGdsb2JlIiwiYSI6ImNpbmJscnhhZTBudmp0cWx3MXI5bWt0djgifQ.9DibR63tG-LY6FvjDLhCXg";
 			//custom extent can be specified as follows: index.html?lat=15.4818&lng=-3.7372&zoom=12
+			// e.g. Parana Dam in Brazil - https://andrewcottam.github.io/google-earth-engine-apps/water.html?lat=-25.4097744450637&lng=-54.607113236676334&zoom=14
+			// XPrize Test site - https://andrewcottam.github.io/google-earth-engine-apps/water.html?lat=-2.965624&lng=-60.74229&zoom=14
 			queryObject = ioQuery.queryToObject(win.doc.location.search.substring(1));
 			parser.parse().then(function() {
 				// on(registry.byId("toggleMBbasemap"), "change", function(value) {
